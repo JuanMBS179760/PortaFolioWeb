@@ -1,0 +1,25 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+#contenedor{
+    width: 100%;
+    background-color: rgba(214, 232, 238, 0.685);
+}
+
+#cont{
+    margin: 10px auto;
+    width: 95%;
+}
+
+.contenedores{
+    width: 100%;
+}
+
+#Guarda{
+    color: whitesmoke;
+    background-color: rgb(137, 137, 245);
+    width: 100%;
+}

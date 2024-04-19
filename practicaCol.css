@@ -1,0 +1,49 @@
+nav{
+    background: rosybrown;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.nav-enlace{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+    background: salmon;
+}
+.nav-enlace:hover{
+    background: coral;
+    transition: 0.4s;
+    transform: scale(1.2);
+}
+
+
+.nav-button:hover{
+    background: coral;
+    transition: 0.4s;
+    transform: scale(1.2);
+}
+
+.nav-button{
+    background: salmon;
+    color: white;
+    display: none;
+    border: 2px solid white;
+    padding: 10px 0px;
+}
+
+@media (max-width: 500px){
+    nav{
+        background: black;
+        flex-direction: column;
+        align-items: center;
+    }
+   .nav-button{
+        display: inline-block;
+   }
+
+   .des{
+       display: none;
+   }
+}

@@ -1,0 +1,21 @@
+#forms{
+    width: 100%;
+    color: white;
+    background-color: rebeccapurple;
+    padding: 10px;
+}
+
+input{
+    color: white;
+    background-color: black;
+    width: 95%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover{
+    transition: 0.4s;
+    background-color: gray;
+    transform: scale(1.1);
+}

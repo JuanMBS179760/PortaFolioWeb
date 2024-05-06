@@ -1,0 +1,61 @@
+body{
+  color: white;
+  background-color: black;
+}
+
+/*
+Funcion que delimita el tamaño y el donde se posicionan las imagenes
+*/
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/*
+forma las imagenes una despues de otra
+*/
+.carousel-content {
+  display: flex;
+}
+
+/*
+delimita el tamaño y el donde se posicionan las imagenes
+*/
+.carousel-content img {
+  width: 100%;
+  display: none;
+}
+
+
+/*
+con el punto active hacemos que se bloquee cual imagen se muestra
+*/
+.carousel-content img.active {
+  display: block;
+}
+
+/*
+Son los botones que se muestran a los laterales que permiten cambiar la imagen de manera manual
+*/
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+#prevBtn {
+  left: 0;
+}
+
+#nextBtn {
+  right: 0;
+}
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="EstilosPF.css">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<script type="text/javascript" src="/PluginPFG/js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/PluginPFG/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="/PluginPFG/jspdf.js"></script>
+	<script type="text/javascript" src="/PluginPFG/jspdf.plugin.addimage.js"></script>
+	<script type="text/javascript" src="/PluginPFG/jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="/PluginPFG/jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="/PluginPFG/jspdf.plugin.from_html.js"></script>
+    <title>Inteligencia artificial -</title>
+</head>
+<body>
+
+    <header>
+        <div class="menu">
+            <img src="/ProyectoFinal/img/icono.png" alt="" id="logo">
+
+            <nav>
+                <ul>
+                    <li><a href="#">Informacion</a></li>
+                    <li><a href="#">Ejemplos de IA</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <script>
+        var total;
+        function califica()
+            {var total=0;
+                //Evalua cada pregunta
+                for (var x=1;x<=4;x++)
+                {
+                var res=0;
+                var nom="r"+x;
+                var resul=document.getElementsByName(nom);
+                for(var i=0;i<resul.length;i++)
+                {
+                    if(resul[i].checked==true)
+                        res=parseInt(resul[i].value);
+                }
+                total=total+res;
+                document.getElementById("total").innerHTML="Puntos obtenidos: "+total+" Puntos";
+                }
+                if(total==20)
+                    document.getElementById("comentario").innerHTML="EXCELENTE!!!";
+                else
+                    if(total==15)
+                    document.getElementById("comentario").innerHTML="Regular!!";
+                else
+                    if(total<=15)
+                    document.getElementById("comentario").innerHTML="Estudia un poco más";
+            }
+        
+         
+        function generar(){
+        
+        //Crear un objeto o instancia jsPDF
+        var doc = new jsPDF();
+        
+        //Definir el tamaño de la letra
+        doc.setFontSize(40);
+        //Color del texto
+        doc.setTextColor(9,7,121);
+        doc.text(40, 20, "Conceptos basicos");
+        doc.setTextColor(17, 122, 209); //Color en formato RGB
+        doc.setFontSize(30);
+        doc.text(50, 35, "Resultados del test"); //Ubicación, Texto
+        doc.setTextColor(0,0,0);
+        doc.setFontSize(10);
+        doc.text(20, 50, "20 puntos. Muy bien. \r Todas tus respuestas son correctas");
+        doc.text(20, 70, "15 puntos. Regular. \r Obtuviste 2 preguntas correctas");
+        doc.text(20, 90, "0 puntos. \r Todas tus respuestas son incorrectas");
+        
+        //doc.addImage(imgData, 'JPEG', 10, 40, 180, 180);
+         
+        var string = doc.output('datauristring');
+        
+        $('iframe').attr('src', string);
+        
+        }
+        </script>
+
+    <div id="quest">
+        <h2>¿Cuanto sabes de las IA?</h2>
+        <form>
+            <ul>
+        
+                <li>¿Que son las IA?</li>
+                <input class="rads" type="radio" name="r1" id="r1" value="5"/>Son sistemas de IA pueden procesar datos y patrones<br/>
+                <input class="rads" type="radio" name="r1" id="r1" value="0"/>Un tipo de los tipos de inteligencia<br/>
+                <input class="rads" type="radio" name="r1" id="r1" value="0"/>Un algoritmo que nos ayuda a hacer tareas<br/>
+                <input class="rads" type="radio" name="r1" id="r1" value="0"/>ChatGPT<br/>
+                
+                <li>Cual de estas es una Inteligencia Artificial</li>
+                <input class="rads" type="radio" name="r2" id="r2" value="0"/>Uber<br/>
+                <input class="rads" type="radio" name="r2" id="r2" value="0"/>Google Chrome<br/>
+                <input class="rads" type="radio" name="r2" id="r2" value="5"/>Alexa<br/>
+                <input class="rads" type="radio" name="r2" id="r2" value="0"/>Windows<br/>
+        
+                <li>Quien fue el padre de las inteligencias Artificiales</li>
+                <input class="rads" type="radio" name="r3" id="r3" value="5"/>Frank Rosenblat<br/>
+                <input class="rads" type="radio" name="r3" id="r3" value="0"/>John McCarthy<br/>
+                <input class="rads" type="radio" name="r3" id="r3" value="0"/>Alan Turing<br/>
+                <input class="rads" type="radio" name="r3" id="r3" value="0"/>Jeff Bezos<br/>
+        
+                <li>Las inteligencias artificiales pueden aprender de si mismas?</li>
+                <input class="rads" type="radio" name="r4" id="r4" value="5"/>Si<br/>
+                <input class="rads" type="radio" name="r4" id="r4" value="0"/>No, su prgramacion no se los permite<br/>
+            </ul>
+            <input class="bots" type="button" value="Calificar" onclick="califica()">
+            <p></p>
+            <p id="total">   </p>
+            <p id="comentario">   </p>
+        </form>
+    </div>
+    <h2 align="center">Galeria de Fotos</h2>
+    <div id="galeria">
+        <img src="https://th.bing.com/th/id/OIP.2Iui_zxBOiZDZAbN_7t83gAAAA?rs=1&pid=ImgDetMain" alt="">
+        <img src="https://th.bing.com/th/id/OIP.n72Tlq0O8fZVavAvKeIV7AAAAA?rs=1&pid=ImgDetMain" alt="">
+        <img src="https://th.bing.com/th/id/OIP.EXyK3xihQ0A9O9CBELWXUgAAAA?rs=1&pid=ImgDetMain" alt="">
+        <img src="https://th.bing.com/th/id/OIP.hta0FgBSHm5ds-Ugs5L-VwAAAA?w=265&h=180&c=7&r=0&o=5&pid=1.7" alt="">
+    </div>
+
+    <h2 align="center">¿Quieres aprender mas sobre el uso de las inteligencias artificiales?</h2>
+    <div align="center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_tA5cinv0U8?si=fs-zgYa2__YN_xqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+</body>
+    
+</html>

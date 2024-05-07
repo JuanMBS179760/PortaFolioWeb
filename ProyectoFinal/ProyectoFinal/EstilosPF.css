@@ -1,0 +1,197 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+header{
+    background-color: #157ee9;
+    background-image: linear-gradient(180deg, #157ee9 0%, #ffffff 100%);
+    width: 100%;
+    clear: both;
+    content: '';
+    display: table;
+
+}
+
+.menu{
+    width: auto;
+    margin: 0 auto;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+    padding: 8px;
+}
+
+#logo:hover{
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+nav{
+    float: right;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 35px;
+    float: left;
+    padding: 30px 5px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    transition: .5s;
+    transform: scale(1.3);
+    color: blue;
+}
+
+section{
+    color: black;
+    align-items: center;
+}
+
+.info{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#galeria{
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#galeria img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: 0.3s;
+}
+
+#galeria img:hover{
+    cursor: pointer;
+    width: 400px;
+    opacity: 1;
+    filter: contrast(120%);
+
+}
+
+#quest{
+    list-style: none;
+    text-decoration: none;
+    border-radius: 15px;
+    margin: 20px;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="button"]{
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #157ee9;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"]:hover{
+    transition: 0.3s;
+    transform: scale(1.3);
+    background-color: #03172b;
+    color: blue;
+}
+
+@media (max-width: 600px){
+    body{
+        color: white;
+        background-color: black;
+    }
+    header{
+        background-color: #157ee9;
+        background-image: linear-gradient(180deg, #02468a 0%, #000000 100%);
+        width: 100%;
+        clear: both;
+        content: '';
+        display: table;
+    
+    }
+
+    .menu{
+    width: auto;
+    margin: 0 auto;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+    padding: 8px;
+}
+
+#logo:hover{
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+nav{
+    float: right;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 35px;
+    float: left;
+    padding: 30px 5px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    transition: .5s;
+    transform: scale(1.3);
+    color: blue;
+}
+
+section{
+    color: white;
+    align-items: center;
+}
+}

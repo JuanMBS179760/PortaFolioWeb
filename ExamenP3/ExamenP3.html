@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="ExamenCss.css">
+    <title>Palindromo</title>
+    <script type="text/javascript">
+
+        /**
+         *La funcion palindromo analiza la cadena para compobar si es un
+         * palíndromo, esto lo hace primeo pasando la cadena a minusculas
+         * para despues quitarle los espacios, despues entra a un
+         * for, los cuales se encargan de ver cada caracter de la cadena
+         * y comprobar si la cadena es palidroma analizado la original con la
+         * cadena puesta al reves
+         */
+        function palindromo() {
+        var cad = document.getElementById("t").value;    
+        var resultado = "La frase \""+cad+"\" \n";
+        var cadenaOriginal =cad.toLowerCase();
+        var letrasEspacios = cadenaOriginal.split("");
+        var cadenaSinEspacios = "";
+        for(i in letrasEspacios) {
+            if(letrasEspacios[i] != " ") {
+                cadenaSinEspacios += letrasEspacios[i];
+            }
+        }
+        var letras = cadenaSinEspacios.split("");
+        var letrasReves = cadenaSinEspacios.split("").reverse();
+        var iguales = true;
+        for(i in letras) {
+            if(letras[i] == letrasReves[i]) {
+            }
+            else {
+                iguales = false;
+            }
+        }
+        if(iguales) {
+            document.getElementById("palabra").innerHTML = resultado += " es un palíndromo";
+        }
+        else {
+            document.getElementById("palabra").innerHTML = resultado += " no es un palíndromo";
+        }
+        }
+        
+
+</script>
+</head>
+<body>
+
+    <form action="" method="post" id="comprueba" align="center">
+        <label for="">Introduce una palabra</label><br>
+        <input type="text" name="t" id="t"><br><br>
+        <input type="button" value="Comprobar" onclick="palindromo()"><br><br>
+        <p id="palabra"></p>
+    </form>
+</body>
+</html>
